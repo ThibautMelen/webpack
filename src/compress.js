@@ -1,5 +1,5 @@
 export default function(str) {
-	console.log('logger.js is RUNNING!!');
+	console.log('YYYOOUUPPII');
 
 let page = (((str.replace(/^[ \n\r\t\f]+/, '')
 							.replace(/[ \n\r\t\f]+$/, ''))
@@ -16,9 +16,5 @@ let page = (((str.replace(/^[ \n\r\t\f]+/, '')
 							.replace(/&rarr;/g, "→")
 							.replace(/\/\*([^<]*)/g, "");
 
-
-
-
-//(str + '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 	return page;
 }
