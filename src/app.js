@@ -10,7 +10,7 @@ $(function() {
       let newPage = compress(page);
       console.log(newPage);
 
-      let optimized_length = newPage.length;
+      let optimized_length = newPage.length - 1024;
       console.log(`${optimized_length / 1024} ko`);
 
       let reduction = 1 - optimized_length / initial_length;

@@ -1,21 +1,24 @@
 export default function(str) {
 	console.log('logger.js is RUNNING!!');
 
+let page = (((str.replace(/^[ \n\r\t\f]+/, '')
+							.replace(/[ \n\r\t\f]+$/, ''))
+							.replace(/type="text\/javascript"/g, ''))
+							.replace(/\s+/g, ' '))
+    					.replace(/\\?\n|\\?\r\n/g, '')
+							.replace(/rgb\((\-?\d+),(\-?\d+),(\-?\d+)\)/g, function (match, red, green, blue) {
+      					return shortenRgb(red, green, blue);
+    					})
+							.replace(/<!--[^>]*-->/gm, '')
+							.replace(/, /g, ',')
+							.replace(/&rsquo;/g, "’")
+							.replace(/&#8230;/g,'...')
+							.replace(/&rarr;/g, "→")
+							.replace(/\/\*([^<]*)/g, "");
 
-let page = str.replace(/^[ \n\r\t\f]+/, '')
-							.replace(/[ \n\r\t\f]+$/, '');
-
-let a = page.replace(/type="text\/javascript"/g, '');
-
-// let b = a.replace(/\s\B/g, "");
-// let b = replace(/>\s+|\s+</g, "");
-
-// var result = a.replace(/>\s+|\s+</g, function(m) {
-//     return m.trim();
-// });
 
 
-	return a.replace(/\s+/g, ' ');;
+
+//(str + '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+	return page;
 }
-
-// a.replace(/\s+/g, ' ');
